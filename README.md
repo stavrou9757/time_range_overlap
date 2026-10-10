@@ -39,3 +39,10 @@ Boundary inclusivity. `[09:00, 10:00)` and `[10:00, 11:00)` share the instant
 `[09:00, 10:00]` and `[10:00, 11:00)` intersect at exactly `10:00`. The
 implementation honours this: an intersection endpoint is inclusive only when
 every contributing range marks it inclusive.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+

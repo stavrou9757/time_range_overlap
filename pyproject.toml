@@ -1,6 +1,6 @@
 [project]
 name = "time-range-overlap"
-version = "0.1.0"
+version = "0.1.1"
 description = "Computes the intersection and union of multiple datetime ranges."
 requires-python = ">=3.10"
 dependencies = []
